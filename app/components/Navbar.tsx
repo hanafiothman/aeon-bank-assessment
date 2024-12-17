@@ -7,16 +7,17 @@ import NavbarSearch from './NavbarSearch';
 import AppTitle from './AppTitle';
 import { usePathname } from 'next/navigation';
 import Button from './Button';
+import { useAuth } from '../providers/AuthProvider';
 
 export default function Navbar() {
-  const [isLoggedIn, setLoggedIn] = useState<boolean>(false);
-
 	const [isMobileMenuDisplayed, setMobileMenuDisplayed] = useState<boolean>(false);
 	const [isSearchbarDisplayed, setSearchbarDisplayed] = useState<boolean>(false);
 
   const pathname = usePathname();
 
 	const mobileMenuRef = useRef<HTMLDivElement>(null);
+
+	const { isLoggedIn } = useAuth();
 
 	const navbarLinks: { title: string; href: string; }[] = [
 		{
@@ -68,14 +69,6 @@ export default function Navbar() {
 		};
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isMobileMenuDisplayed]);
-
-  useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      const user = JSON.parse(storedUser);
-      setLoggedIn(user.token);
-    }
-  }, []);
 
   return (
 		<nav className="flex h-[64px]">

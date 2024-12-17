@@ -7,6 +7,7 @@ import TextInput from '../components/TextInput';
 import Button from '../components/Button';
 import { GetSecureWordResponse } from '../api/secure-word/route';
 import { LoginResponse } from '../api/login/route';
+import bcrypt from 'bcryptjs';
 
 interface LoginInput {
 	username: string;
@@ -53,6 +54,8 @@ export default function LoginForm() {
 	}
 
 	const login = async (username: string, password: string) => {
+		const cryptedPassword = bcrypt.hashSync(password, 10);
+
 		const response = await fetch('/api/login', {
 			method: 'POST',
 			headers: {
@@ -61,7 +64,7 @@ export default function LoginForm() {
 			},
 			body: JSON.stringify({
 				username: username,
-				password: password
+				password: cryptedPassword
 			})
 		});
 

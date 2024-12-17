@@ -5,10 +5,16 @@ import { useEffect, useRef, useState } from 'react';
 import { GrClose, GrSearch, GrMenu } from 'react-icons/gr';
 import NavbarSearch from './NavbarSearch';
 import AppTitle from './AppTitle';
+import { usePathname } from 'next/navigation';
+import Button from './Button';
 
 export default function Navbar() {
+  const [isLoggedIn, setLoggedIn] = useState<boolean>(false);
+
 	const [isMobileMenuDisplayed, setMobileMenuDisplayed] = useState<boolean>(false);
 	const [isSearchbarDisplayed, setSearchbarDisplayed] = useState<boolean>(false);
+
+  const pathname = usePathname();
 
 	const mobileMenuRef = useRef<HTMLDivElement>(null);
 
@@ -45,6 +51,11 @@ export default function Navbar() {
 		}
 	}
 
+  const logout = () => {
+    localStorage.clear();
+    window.location.href = '/login';
+  }
+
 	useEffect(() => {
 		if (isMobileMenuDisplayed) {
 			document.addEventListener('mousedown', handleClickOutside);
@@ -58,6 +69,14 @@ export default function Navbar() {
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isMobileMenuDisplayed]);
 
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      setLoggedIn(user.token);
+    }
+  }, []);
+
   return (
 		<nav className="flex h-[64px]">
 			<div className="flex items-center h-full border-b w-full px-xl py-md">
@@ -65,36 +84,51 @@ export default function Navbar() {
 					<AppTitle />
 				</div>
 
-				<div className="hidden md:flex ml-2xl mr-xl">
-					{navbarLinks.map((link, idx) => 
-						<Link key={idx} href={link.href} className="mr-lg">
-							{link.title}
-						</Link>
-					)}
-				</div>
+        { !isLoggedIn ?
+        <>
+          <div className="hidden md:flex ml-2xl mr-xl">
+            {navbarLinks.map((link, idx) => 
+              <Link key={idx} href={link.href} className="mr-lg">
+                {link.title}
+              </Link>
+            )}
+          </div>
 
-				<div className="hidden md:flex ml-auto w-[300px]">
-					<NavbarSearch />
-				</div>
+          <div className="hidden md:flex ml-auto w-[300px]">
+            <NavbarSearch />
+          </div>
 
-				<button
-					className="text-xl md:hidden"
-					onClick={() => setMobileMenuDisplayed(!isMobileMenuDisplayed)}
-				>
-					<GrMenu />
-				</button>
+          <button
+            className="text-xl md:hidden"
+            onClick={() => setMobileMenuDisplayed(!isMobileMenuDisplayed)}
+          >
+            <GrMenu />
+          </button>
+        </>
+        :
+        null }
 
-				<a
-					className="ml-auto md:ml-lg bg-primary rounded-md text-white px-md py-2xs text-sm md:text-base"
-					href={'/login'}
-				>
-					Login
-				</a>
+        { pathname !== '/login' ?
+          !isLoggedIn ?
+				  <a
+            className="ml-auto md:ml-lg bg-primary rounded-md text-white px-md py-2xs text-sm md:text-base"
+            href={'/login'}
+          >
+            Login
+          </a>
+          :
+          <Button
+            className="ml-auto"
+            onClick={() => logout()}
+          >
+            Logout
+          </Button>
+        : null }
 			</div>
 
 			<div
 				ref={mobileMenuRef}
-				className={`md:hidden absolute left-0 h-full bg-white border shadow-lg transition-transform duration-300 ${isMobileMenuDisplayed ? 'translate-x-0' : '-translate-x-full'} w-[300px]`}
+				className={`md:hidden absolute left-0 z-50 h-full bg-white border shadow-lg transition-transform duration-300 ${isMobileMenuDisplayed ? 'translate-x-0' : '-translate-x-full'} w-[300px]`}
 			>
 				<div className="py-lg px-lg border-b">
 					<div className="flex items-center">

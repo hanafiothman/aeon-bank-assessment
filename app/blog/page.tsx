@@ -1,6 +1,8 @@
 export default function BlogPage() {
   return (
-    <div>This is the Blog page</div>
+    <div className="font-bold text-xl mb-lg">
+			Blog
+		</div>
   );
 }
   

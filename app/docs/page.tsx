@@ -1,6 +1,8 @@
 export default function DocsPage() {
   return (
-    <div>This is the Docs page</div>
+    <div className="font-bold text-xl mb-lg">
+			Docs
+		</div>
   );
 }
   

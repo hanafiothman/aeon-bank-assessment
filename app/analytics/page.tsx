@@ -1,6 +1,8 @@
 export default function AnalyticsPage() {
   return (
-    <div>This is the Analytics page</div>
+    <div className="font-bold text-xl mb-lg">
+			Analytics
+		</div>
   );
 }
   

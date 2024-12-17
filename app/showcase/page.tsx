@@ -1,5 +1,7 @@
 export default function ShowcasePage() {
   return (
-    <div>This is the Showcase page</div>
+    <div className="font-bold text-xl mb-lg">
+			Showcase
+		</div>
   );
 }

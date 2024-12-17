@@ -1,6 +1,8 @@
 export default function EnterprisePage() {
   return (
-    <div>This is the Enterprise page</div>
+    <div className="font-bold text-xl mb-lg">
+			Enterprise
+		</div>
   );
 }
   

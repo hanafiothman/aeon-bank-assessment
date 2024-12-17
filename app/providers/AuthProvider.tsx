@@ -58,7 +58,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
 	}
 
 	if (pathname === '/login' && isLoggedIn) {
-		return redirect('/');
+		return redirect('/transactions');
 	}
 
   return (

@@ -74,7 +74,7 @@ export default function LoginForm() {
 
 		const resJson: LoginResponse = await response.json();
 		localStorage.setItem('user', JSON.stringify(resJson.data));
-		window.location.href = '/';
+		window.location.href = '/transactions';
 	}
 
 	const submitForm = (e: FormEvent) => {

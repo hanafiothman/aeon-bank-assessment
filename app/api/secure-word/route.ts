@@ -1,4 +1,4 @@
-import secureWords from '../../lib/secure-words';
+import secureWords from '../../lib/db/secure-words';
 
 export interface GetSecureWordResponse {
 	success: boolean;

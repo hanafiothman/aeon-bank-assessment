@@ -1,24 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AEON ProtoPortal
 
 ## Getting Started
 
-First, run the development server:
+Pre-requisite:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18+
+  - for macOS and other unix users, avoid Homebrew and consider [nvm](https://github.com/nvm-sh/nvm)
+  - for Windows users, consider [nvm-windows](https://github.com/coreybutler/nvm-windows)
+- `.env` set
+
+For `.env`, create an `.env` file in the project root and make sure you define the following environment variables in the file:
+
+```
+APP_URL=http://localhost:3000  # or any other port that you are using
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the following commands to start the development server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+pnpm install
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You should now be able to access the application at http://localhost:3000.
+
+## Unit tests
+
+The unit tests files are stored in the `/__tests__` folder, following the structure in the `/app` folder.
+
+To run the unit tests, run this command:
+```
+pnpm test
+```
+
+You should see the tests running in the Terminal.
 
 ## Learn More
 

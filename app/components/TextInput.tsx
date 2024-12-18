@@ -32,6 +32,7 @@ export default function TextInput({ error, errorMessage, className, containerPro
 			
 			{ isPassword ?
 			<button
+				data-testid="toggle-button"
 				type="button"
 				className="absolute right-md top-sm"
 				onClick={() => setShowPassword(!isShowPassword)}

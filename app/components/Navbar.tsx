@@ -54,7 +54,7 @@ export default function Navbar() {
 
   const logout = () => {
     localStorage.clear();
-    window.location.href = '/login';
+		window.location.assign('/login');
   }
 
 	useEffect(() => {
@@ -92,6 +92,7 @@ export default function Navbar() {
           </div>
 
           <button
+						data-testid="menu-button"
             className="text-xl md:hidden"
             onClick={() => setMobileMenuDisplayed(!isMobileMenuDisplayed)}
           >
@@ -120,6 +121,7 @@ export default function Navbar() {
 			</div>
 
 			<div
+				data-testid="mobile-menu"
 				ref={mobileMenuRef}
 				className={`md:hidden absolute left-0 z-50 h-full bg-white border shadow-lg transition-transform duration-300 ${isMobileMenuDisplayed ? 'translate-x-0' : '-translate-x-full'} w-[300px]`}
 			>
@@ -128,12 +130,14 @@ export default function Navbar() {
 						<AppTitle />
 
 						<button
+							data-testid="search-button"
 							className="text-xl mr-xs ml-auto"
 							onClick={() => setSearchbarDisplayed(!isSearchbarDisplayed)}
 						>
 							<GrSearch />
 						</button>
 						<button
+							data-testid="close-menu-button"
 							className="text-xl"
 							onClick={() => setMobileMenuDisplayed(!isMobileMenuDisplayed)}
 						>

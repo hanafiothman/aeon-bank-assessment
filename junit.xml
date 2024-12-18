@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="34" failures="0" errors="0" time="1.802">
+  <testsuite name="NavbarSearch" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:50" time="0.688" tests="3">
+    <testcase classname="NavbarSearch renders the search input with placeholder text" name="NavbarSearch renders the search input with placeholder text" time="0.016">
+    </testcase>
+    <testcase classname="NavbarSearch has the correct class name applied for styling" name="NavbarSearch has the correct class name applied for styling" time="0.002">
+    </testcase>
+    <testcase classname="NavbarSearch updates the input value on change" name="NavbarSearch updates the input value on change" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="TextInput" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:50" time="0.702" tests="4">
+    <testcase classname="TextInput renders the input field with default styles and attributes" name="TextInput renders the input field with default styles and attributes" time="0.017">
+    </testcase>
+    <testcase classname="TextInput when error is true displays an error message and applies error styles" name="TextInput when error is true displays an error message and applies error styles" time="0.003">
+    </testcase>
+    <testcase classname="TextInput when isPassword is true renders a password input with a toggle button" name="TextInput when isPassword is true renders a password input with a toggle button" time="0.005">
+    </testcase>
+    <testcase classname="TextInput when isPassword is true toggles password visibility when the toggle button is clicked" name="TextInput when isPassword is true toggles password visibility when the toggle button is clicked" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="Button" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:50" time="0.712" tests="1">
+    <testcase classname="Button renders the Button with correct text and styling" name="Button renders the Button with correct text and styling" time="0.045">
+    </testcase>
+  </testsuite>
+  <testsuite name="AppTitle" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:50" time="0.731" tests="2">
+    <testcase classname="AppTitle renders link to &quot;/&quot; when user is not logged in" name="AppTitle renders link to &quot;/&quot; when user is not logged in" time="0.031">
+    </testcase>
+    <testcase classname="AppTitle renders link to &quot;/transactions&quot; when user is logged in" name="AppTitle renders link to &quot;/transactions&quot; when user is logged in" time="0.013">
+    </testcase>
+  </testsuite>
+  <testsuite name="DocsPage" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:51" time="0.148" tests="1">
+    <testcase classname="DocsPage renders the DocsPage with correct text and styling" name="DocsPage renders the DocsPage with correct text and styling" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="ShowcasePage" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:51" time="0.14" tests="1">
+    <testcase classname="ShowcasePage renders the ShowcasePage with correct text and styling" name="ShowcasePage renders the ShowcasePage with correct text and styling" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="TemplatesPage" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:51" time="0.139" tests="1">
+    <testcase classname="TemplatesPage renders the TemplatesPage with correct text and styling" name="TemplatesPage renders the TemplatesPage with correct text and styling" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="Navbar" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:50" time="0.864" tests="7">
+    <testcase classname="Navbar renders AppTitle and login link for logged-out users" name="Navbar renders AppTitle and login link for logged-out users" time="0.072">
+    </testcase>
+    <testcase classname="Navbar renders AppTitle and logout button for logged-in users" name="Navbar renders AppTitle and logout button for logged-in users" time="0.022">
+    </testcase>
+    <testcase classname="Navbar renders navbar links correctly" name="Navbar renders navbar links correctly" time="0.044">
+    </testcase>
+    <testcase classname="Navbar displays mobile menu when menu button is clicked" name="Navbar displays mobile menu when menu button is clicked" time="0.008">
+    </testcase>
+    <testcase classname="Navbar hides mobile menu when close button is clicked" name="Navbar hides mobile menu when close button is clicked" time="0.006">
+    </testcase>
+    <testcase classname="Navbar renders NavbarSearch when search button is clicked" name="Navbar renders NavbarSearch when search button is clicked" time="0.004">
+    </testcase>
+    <testcase classname="Navbar when click on logout clears localStorage and redirects to /login" name="Navbar when click on logout clears localStorage and redirects to /login" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="EnterprisePage" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:51" time="0.148" tests="1">
+    <testcase classname="EnterprisePage renders the EnterprisePage with correct text and styling" name="EnterprisePage renders the EnterprisePage with correct text and styling" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="LoginForm" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:50" time="0.924" tests="7">
+    <testcase classname="LoginForm when loginStep is 0 renders the form elements" name="LoginForm when loginStep is 0 renders the form elements" time="0.039">
+    </testcase>
+    <testcase classname="LoginForm when loginStep is 0 validates username input and shows an error on empty submit" name="LoginForm when loginStep is 0 validates username input and shows an error on empty submit" time="0.019">
+    </testcase>
+    <testcase classname="LoginForm when loginStep is 0 calls fetchSecureWord and proceeds to step 1 when username is submitted" name="LoginForm when loginStep is 0 calls fetchSecureWord and proceeds to step 1 when username is submitted" time="0.014">
+    </testcase>
+    <testcase classname="LoginForm when loginStep is 1 returns to step 0 when user invalidates secure word" name="LoginForm when loginStep is 1 returns to step 0 when user invalidates secure word" time="0.018">
+    </testcase>
+    <testcase classname="LoginForm when loginStep is 1 proceeds to step 2 when user confirms secure word" name="LoginForm when loginStep is 1 proceeds to step 2 when user confirms secure word" time="0.017">
+    </testcase>
+    <testcase classname="LoginForm when loginStep is 2 validates password input and shows an error on empty submit" name="LoginForm when loginStep is 2 validates password input and shows an error on empty submit" time="0.026">
+    </testcase>
+    <testcase classname="LoginForm when loginStep is 2 validates password input and logs in successfully" name="LoginForm when loginStep is 2 validates password input and logs in successfully" time="0.097">
+    </testcase>
+  </testsuite>
+  <testsuite name="transactions module actions functions" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:51" time="0.087" tests="3">
+    <testcase classname="transactions module actions functions getTransactions should return list of transactions users on successful call" name="transactions module actions functions getTransactions should return list of transactions users on successful call" time="0.001">
+    </testcase>
+    <testcase classname="transactions module actions functions getTransactions should return empty array if the response is not ok" name="transactions module actions functions getTransactions should return empty array if the response is not ok" time="0">
+    </testcase>
+    <testcase classname="transactions module actions functions getTransactions should throw an Error on exception" name="transactions module actions functions getTransactions should throw an Error on exception" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="login helper functions" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:51" time="0.087" tests="1">
+    <testcase classname="login helper functions generateMockJWT should generate a mock JWT with the correct structure" name="login helper functions generateMockJWT should generate a mock JWT with the correct structure" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="AnalyticsPage" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:51" time="0.135" tests="1">
+    <testcase classname="AnalyticsPage renders the AnalyticsPage with correct text and styling" name="AnalyticsPage renders the AnalyticsPage with correct text and styling" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="BlogPage" errors="0" failures="0" skipped="0" timestamp="2024-12-18T03:05:51" time="0.145" tests="1">
+    <testcase classname="BlogPage renders the BlogPage with correct text and styling" name="BlogPage renders the BlogPage with correct text and styling" time="0.01">
+    </testcase>
+  </testsuite>
+</testsuites>

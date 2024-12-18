@@ -23,7 +23,7 @@ export default function LoginForm() {
       username: '',
 			password: ''
     },
-    onSubmit: async (values: LoginInput) => {
+    onSubmit: async (values: LoginInput) => {			
 			if (loginStep === 0) {
 				fetchSecureWord(values.username);
 			} else if (loginStep === 2) {
@@ -74,7 +74,7 @@ export default function LoginForm() {
 
 		const resJson: LoginResponse = await response.json();
 		localStorage.setItem('user', JSON.stringify(resJson.data));
-		window.location.href = '/transactions';
+		window.location.assign('/transactions');
 	}
 
 	const submitForm = (e: FormEvent) => {

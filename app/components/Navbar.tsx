@@ -8,6 +8,7 @@ import AppTitle from './AppTitle';
 import { usePathname } from 'next/navigation';
 import Button from './Button';
 import { useAuth } from '../providers/AuthProvider';
+import { BiUser } from 'react-icons/bi';
 
 export default function Navbar() {
 	const [isMobileMenuDisplayed, setMobileMenuDisplayed] = useState<boolean>(false);
@@ -104,19 +105,26 @@ export default function Navbar() {
 
         { pathname !== '/login' ?
           !isLoggedIn ?
-				  <a
+				  <Link
             className="ml-auto md:ml-lg bg-primary rounded-md text-white px-md py-2xs text-sm md:text-base"
             href={'/login'}
           >
             Login
-          </a>
+          </Link>
           :
-          <Button
-            className="ml-auto"
-            onClick={() => logout()}
-          >
-            Logout
-          </Button>
+					<div className="flex ml-auto gap-lg items-center">
+		  			<Link
+							className="text-primary text-2xl"
+							href={'/transactions'}
+						>
+							<BiUser />
+						</Link>
+						<Button
+							onClick={() => logout()}
+						>
+							Logout
+						</Button>
+					</div>
         : null }
 			</div>
 

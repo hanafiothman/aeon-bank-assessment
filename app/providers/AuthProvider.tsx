@@ -32,7 +32,6 @@ export const useAuth = (): AuthState => {
 };
 
 export function AuthProvider({ children }: PropsWithChildren) {
-	const [isAuthenticating, setAuthenticating] = useState<boolean>(true);
   const [isLoggedIn, setLoggedIn] = useState<boolean>(false);
   const [authUser, setAuthUser] = useState<AuthUser>({
 		username: '',
@@ -49,13 +48,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
 			setAuthUser(user);
       setLoggedIn(Boolean(user.token));
     }
-
-		setAuthenticating(false);
 	}, []);
-
-	if (isAuthenticating) {
-		return <div>Loading...</div>
-	}
 
 	if (pathname === '/login' && isLoggedIn) {
 		return redirect('/transactions');
